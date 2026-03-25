@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NumLib - Numerical Computing Library</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+    header {
+      background: #020617;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid #1e293b;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 10px;
+    }
+    nav a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .hero h2 {
+      font-size: 2rem;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: #38bdf8;
+      color: #020617;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    .section {
+      margin-top: 50px;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #020617;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid #1e293b;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+      border-top: 1px solid #1e293b;
+      font-size: 0.9rem;
+    }
+    code {
+      background: #1e293b;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>NumLib</h1>
+    <p>Fast, lightweight numerical computing for developers</p>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#install">Install</a>
+      <a href="#docs">Docs</a>
+      <a href="#github">GitHub</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section class="hero">
+      <h2>Compute faster. Code smarter.</h2>
+      <p>A simple and powerful numerical library for linear algebra, optimization, and scientific computing.</p>
+      <a class="btn" href="#install">Get Started</a>
+    </section>
+
+    <section id="features" class="section">
+      <h2>Features</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Linear Algebra</h3>
+          <p>Matrix operations, decompositions, and solvers.</p>
+        </div>
+        <div class="card">
+          <h3>Optimization</h3>
+          <p>Gradient descent, convex solvers, and more.</p>
+        </div>
+        <div class="card">
+          <h3>Statistics</h3>
+          <p>Distributions, sampling, and inference tools.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="install" class="section">
+      <h2>Installation</h2>
+      <p>Install via npm:</p>
+      <pre><code>npm install numlib</code></pre>
+      <p>Or include via CDN:</p>
+      <pre><code>&lt;script src="https://cdn.example.com/numlib.js"&gt;&lt;/script&gt;</code></pre>
+    </section>
+
+    <section id="docs" class="section">
+      <h2>Example Usage</h2>
+      <pre><code>import { matrixMultiply } from 'numlib';
+
+const A = [[1,2],[3,4]];
+const B = [[5,6],[7,8]];
+
+console.log(matrixMultiply(A, B));</code></pre>
+    </section>
+
+    <section id="github" class="section">
+      <h2>GitHub</h2>
+      <p>View the source code and contribute:</p>
+      <a class="btn" href="https://github.com/yourusername/numlib">Visit Repository</a>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2026 NumLib. Built for GitHub Pages.</p>
+  </footer>
+</body>
+</html>
