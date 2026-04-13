@@ -3,153 +3,357 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NumLib - Numerical Computing Library</title>
+  <img src="Images/TopBannerHome.png" 
+        alt="Mimetic Operators Library Enhanced (MOLE) - Open-source Software Ecosystem"
+        width="90%"/>
+  <!--<title>MOLE — Mimetic Operators Library Enhanced</title>-->
+  <link rel="icon" type="image/png" href="Images/mole-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" 
+    rel="stylesheet" />
   <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #69b7c8;
+      --green-dark: #256371;
+      --green-light: #75bdce;
+      --green-mid: #458fa0;
+      --fnt-light: #09cdf9;
+      --bg: #F7F6F2;
+      --surface: #FFFFFF;
+      --text: #1A1A18;
+      --text-muted: #265059;
+      --border: rgba(26,26,24,0.1);
+      --border-strong: rgba(26,26,24,0.18);
+      --accent: #0e86a1;
+      --mono: 'DM Mono', monospace;
+      --sans: 'DM Sans', sans-serif;
+      --display: 'Syne', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
       line-height: 1.6;
-      background: #0f172a;
-      color: #e2e8f0;
+      overflow-x: hidden;
     }
-    header {
-      background: #020617;
-      padding: 20px;
-      text-align: center;
-      border-bottom: 1px solid #1e293b;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
+
+    /* ── NAV ── */
     nav {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 10px;
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(247,246,242,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2.5rem; height: 64px;
     }
-    nav a {
-      color: #38bdf8;
-      text-decoration: none;
-      font-weight: bold;
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
+    .nav-logomark {
+      width: 38px; height: 38px; border-radius: 10px;
+      background: var(--green); display: flex; align-items: center; justify-content: center;
+      font-family: var(--display); font-size: 18px; font-weight: 700; color: #fff;
     }
-    nav a:hover {
-      text-decoration: underline;
+    .nav-name { font-family: var(--display); font-size: 17px; font-weight: 600; letter-spacing: -0.3px; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 18px; color: var(--text-muted); text-decoration: none;
+      font-family: var(--mono); font-weight: 400; letter-spacing: 0.02em;
+      transition: color 0.15s;
     }
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 20px;
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      font-family: var(--mono); font-size: 13px; font-weight: 500;
+      padding: 8px 18px; border-radius: 8px;
+      background: var(--green); color: #fff;
+      border: none; cursor: pointer; text-decoration: none;
+      letter-spacing: 0.01em; transition: background 0.15s;
     }
+    .nav-cta:hover { background: var(--green-mid); }
+
+    /* ── HERO ── */
     .hero {
-      text-align: center;
-      padding: 60px 20px;
+      padding: 1rem 2.5rem 5rem;
+      border-bottom: 1px solid var(--border);
+      position: relative; overflow: hidden;
     }
-    .hero h2 {
-      font-size: 2rem;
+    .hero::before {
+      content: '';
+      position: absolute; top: -80px; right: -100px;
+      /* width: 600px; height: 600px; border-radius: 50%; */
+      background: radial-gradient(circle, rgba(29,158,117,0.08) 0%, transparent 70%);
+      pointer-events: none;
     }
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 20px;
-      background: #38bdf8;
-      color: #020617;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: var(--mono); font-size: 12px; letter-spacing: 0.05em;
+      /* padding: 5px 12px; border-radius: 99px; */
+      background: var(--green-light); color: var(--green-mid);
+      border: 1px solid rgba(29,158,117,0.2);
+      margin-bottom: 1.5rem;
     }
-    .section {
-      margin-top: 50px;
+    .hero-badge::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--green); display: block;
     }
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+    .hero h1 {
+      font-family: var(--display); font-size: clamp(30px, 5vw, 58px);
+      font-weight: 700; line-height: 1.08; letter-spacing: -1.5px;
+      margin-bottom: 1.0rem;
     }
-    .card {
-      background: #020617;
-      padding: 20px;
-      border-radius: 12px;
-      border: 1px solid #1e293b;
+    .hero h1 em { font-style: normal; color: var(--green); }
+    .hero-desc {
+      font-size: 17px; color: var(--text-muted); 
+      line-height: 1.75; margin-bottom: 1.5rem; font-weight: 300;
     }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 3.5rem; }
+    .btn-primary {
+      padding: 12px 26px; background: var(--green); color: #fff;
+      border: none; border-radius: 10px; font-size: 15px;
+      font-family: var(--sans); font-weight: 500; cursor: pointer;
+      text-decoration: none; display: inline-block; transition: background 0.15s;
+    }
+    .btn-primary:hover { background: var(--green-mid); }
+    .btn-outline {
+      padding: 12px 26px; background: transparent; color: var(--text);
+      border: 1px solid var(--border-strong); border-radius: 10px; font-size: 15px;
+      font-family: var(--sans); font-weight: 500; cursor: pointer;
+      text-decoration: none; display: inline-block; transition: border-color 0.15s, background 0.15s;
+    }
+    .btn-outline:hover { background: var(--surface); border-color: var(--text-muted); }
+    .hero-stats {
+      display: flex; gap: 0; flex-wrap: wrap;
+      border: 1px solid var(--border); border-radius: 14px;
+      background: var(--surface); overflow: hidden;
+      max-width: 680px;
+    }
+    .stat {
+      flex: 1; padding: 1.25rem 1.5rem;
+      border-right: 1px solid var(--border);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-num { font-family: var(--display); font-size: 24px; font-weight: 700; }
+    .stat-label { font-size: 12px; color: var(--text-muted); font-family: var(--mono); margin-top: 2px; }
+
+    /* ── SECTIONS ── */
+    section { padding: 2.5rem 2.5rem; }
+    /* border-bottom: 1px solid var(--border); } */
+    .section-header {
+      display: flex; align-items: baseline; justify-content: space-between;
+      margin-bottom: 1.75rem;
+    }
+    .section-header h2 {
+      font-family: var(--display); font-size: 22px; font-weight: 600;
+      letter-spacing: -0.3px;
+    }
+    .see-all {
+      font-family: var(--mono); font-size: 16px; color: var(--green);
+      text-decoration: none; letter-spacing: 0.04em;
+    }
+    .see-all:hover { text-decoration: underline; }
+
+    /* ── NEWS GRID ── */
+    .news-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    @media (max-width: 640px) { .news-grid { grid-template-columns: 1fr; } }
+    .news-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.25rem 1.5rem;
+      display: flex; gap: 16px; align-items: flex-start;
+      transition: border-color 0.15s;
+    }
+    .news-card:hover { border-color: var(--border-strong); }
+    .news-info { flex: 1; }
+    .news-title { font-family: var(--display); font-size: 18px; font-weight: 600; margin-bottom: 4px; }
+    .news-meta { font-size: 14px; color: var(--text-muted); font-family: var(--mono); }
+ 
+    /* ── EVENTS GRID ── */
+    .events-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 640px) { .events-grid { grid-template-columns: 1fr; } }
+    .events-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.25rem 1.5rem;
+      display: flex; gap: 16px; align-items: flex-start;
+      transition: border-color 0.15s;
+    }
+    .events-card:hover { border-color: var(--border-strong); }
+    .events-datebox {
+      min-width: 52px; height: 56px; border-radius: 10px;
+      background: var(--green-light); border: 1px solid rgba(29,158,117,0.2);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .events-datebox .month {
+      font-family: var(--mono); font-size: 10px; font-weight: 500;
+      color: var(--green-mid); letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .events-datebox .day {
+      font-family: var(--display); font-size: 22px; font-weight: 700;
+      color: var(--green-dark); line-height: 1;
+    }
+    .events-info { flex: 1; }
+    .events-title { font-family: var(--display); font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+    .events-meta { font-size: 14px; color: var(--text-muted); font-family: var(--mono); }
+    .events-pill {
+      display: inline-block; margin-top: 8px;
+      font-family: var(--mono); font-size: 16px; padding: 3px 10px; border-radius: 99px;
+    }
+    .pill-upcoming { background: var(--green-light); color: var(--bg); }
+    .pill-past { background: var(--bg); color: var(--green-dark); border: 1px solid var(--border); }
+    
+    
+    /* ── FOOTER ── */
     footer {
-      text-align: center;
-      padding: 20px;
-      margin-top: 50px;
-      border-top: 1px solid #1e293b;
-      font-size: 0.9rem;
+      padding: 1.75rem 2.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
     }
-    code {
-      background: #1e293b;
-      padding: 2px 6px;
-      border-radius: 4px;
+    .footer-left { font-family: var(--mono); font-size: 12px; color: var(--text-muted); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a {
+      font-family: var(--mono); font-size: 12px; color: var(--text-muted);
+      text-decoration: none;
+    }
+    .footer-links a:hover { color: var(--text); }
+
+    /* ── RESPONSIVE NAV ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero { padding: 4rem 1.5rem 3rem; }
+      section { padding: 5.5rem 1.5rem; }
+      nav { padding: 0 1.5rem; }
+      footer { padding: 1.5rem; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>NumLib</h1>
-    <p>Fast, lightweight numerical computing for developers</p>
-    <nav>
-      <a href="#features">Features</a>
-      <a href="#install">Install</a>
-      <a href="#docs">Docs</a>
-      <a href="#github">GitHub</a>
-    </nav>
-  </header>
 
-  <div class="container">
-    <section class="hero">
-      <h2>Compute faster. Code smarter.</h2>
-      <p>A simple and powerful numerical library for linear algebra, optimization, and scientific computing.</p>
-      <a class="btn" href="#install">Get Started</a>
-    </section>
+<!-- NAV -->
+<nav>
+  <a href="https://mole-docs.readthedocs.io/">
+    <img src="Images/mole-logo.png" alt="MOLE Library Information" height="50"/>
+  </a>
+  <ul class="nav-links">
+    <li><a href="https://mole-ose.org">Home</a></li>
+    <li><a href="https://mole-ose.org/gallery.html">Gallery</a></li>
+    <li><a href="https://mole-docs.readthedocs.io/en/main/index.html">Documentation</a></li>
+    <li><a href="Events/events.html"">Events</a></li>
+    <li><a href="https://mole-ose.org/collaborators.html">Collaborators</a></li>
+    <li><a href="https://mole-ose.org/sponsors.html">Sponsors</a></li>
+  </ul>
+  <!-- <a class="nav-cta" href="https://github.com/csrc-sdsu/mole" target="_blank">GitHub ↗</a> -->
+</nav>
 
-    <section id="features" class="section">
-      <h2>Features</h2>
-      <div class="card-grid">
-        <div class="card">
-          <h3>Linear Algebra</h3>
-          <p>Matrix operations, decompositions, and solvers.</p>
-        </div>
-        <div class="card">
-          <h3>Optimization</h3>
-          <p>Gradient descent, convex solvers, and more.</p>
-        </div>
-        <div class="card">
-          <h3>Statistics</h3>
-          <p>Distributions, sampling, and inference tools.</p>
+<!-- Home -->
+<section id="Home">
+  <div class="hero">
+    <h1>MOLE Open-Source Software Ecosystem (OSE)</h1>
+    <p class="hero-desc">
+      <span style="color: var(--text);font-weight: 700;">The MOLE Library </span> implements high-order mimetic difference operators to numerically 
+      solve partial differential equations. It provides discrete analogs of 
+      the most common vector calculus operators: Gradient, Divergence, Laplacian, 
+      and Curl. These operators act on staggered grids (uniform, non-uniform, 
+      and curvilinear) and preserve locally and globally quantities of interests 
+      for systems of conservation laws.<br>
+      <span style="color: var(--text);font-weight: 700;">The MOLE OSE organization</span> was established to support 
+      the MOLE library’s ecosystem as a sustainable, robust, secure, and more 
+      readily available library of high-order mimetic differential operators. 
+      The MOLE OSE serves academic and industrial communities that require 
+      high-performance solvers for PDEs.</p>
+    <!-- NEWS AND UPCOMING EVENTS -->
+     <section id="events">
+          <p style="font-family: var(--sans); color:#265059; font-size: 32px; font-weight: 600; ">
+            MOLE News and Upcoming Events 
+          </p>
+         <div class="news-grid" id="news-grid"></div><br>
+         <div class="events-grid" id="events-grid"></div><br>
+          <a class="see-all" href="Events/events.html">Full list of Events →</a>
+     </section>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://github.com/csrc-sdsu/mole" target="_blank">View on GitHub</a>
+      <a class="btn-outline" href="https://mole-docs.readthedocs.io/" target="_blank">Read the docs</a>
+      <a class="btn-outline" href="https://mole-docs.readthedocs.io/en/main/intros/ose_organization_wrapper.html"
+          target="_blank">MOLE OSE Organization</a>
+      <a class="btn-outline" href="https://mole-docs.readthedocs.io/en/main/intros/contributing_wrapper.html"
+          target="_blank">Contributing to MOLE</a>
+      <a class="btn-outline" href="https://mole-docs.readthedocs.io/en/main/intros/code_of_conduct_wrapper.html"
+          target="_blank">Code of Conduct</a>
+      <a class="btn-outline" href="https://mole-docs.readthedocs.io/en/main/intros/publications_wrapper.html"
+          target="_blank">Selected Publications</a>
+    </div>
+    <!-- the lines below are for future inclusion of KPIs and metrics-->
+    <!-- <div class="hero-stats">
+      <div class="stat">
+      <div class="stat-num">12+</div>
+      <div class="stat-label">applications</div>
+    </div -->
+  </div>
+</section> 
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">© 2008-2024 San Diego State University Research Foundation (SDSURF)</div>
+  <div class="footer-links">
+    <a href="https://www.csrc.sdsu.edu/" target="_blank">CSRC at SDSU</a>"
+    <a href="https://castillo.sdsu.edu/" target="_blank">Contact</a>
+  </div>
+</footer>
+</section>
+
+<script>
+  /* ── DATA ── Edit this section to update content ── */
+  const EVENTS = [
+    { month: "Apr", day: "30", title: "MOLE Users's Group Meeting 2026", 
+    loc: "San Diego State University, CA", upcoming: true, 
+    url: "Events/MUG20260430.html" },
+    { month: "May", day: "12",  title: "MOLE Library Tutorial", 
+    loc: "San Diego State University, CA", upcoming: true, 
+    url: "Events/MLTSP20260512.html" },
+  ];
+  /* ── DATA ── Edit this section to update content ── */
+  const NEWS = [
+    { title: "Current MOLE Library Release: v1.10", newstxt: false},
+    { title: "Next MOLE Library Release: v1.2", newstxt:true,
+    txt: "The next MOLE release will include several new MATLAB/Octave and C++ features and improvements. The release date is planned for May 4, 2026" },
+    { title: "Subscribe to the MOLE Users Mailing List", newstxt:true,
+    txt: "Stay updated with the latest news and announcements by subscribing to the MOLE Users Mailing List, send email to <a href='mailto:join@engr.sdsu.edu'>mole-join@engr.sdsu.edu</a>." },
+  ];
+  /* ── RENDER: NEWS ── */
+  function renderNews() {
+    document.getElementById('news-grid').innerHTML = NEWS.map(nw => `
+      <div class="news-card">
+        <div class="news-info">
+          <div class="news-title">${nw.title}</div>
+          <span class="news-meta">${nw.newstxt ? nw.txt : ''}</span>
         </div>
       </div>
-    </section>
+    `).join('');
+  }
 
-    <section id="install" class="section">
-      <h2>Installation</h2>
-      <p>Install via npm:</p>
-      <pre><code>npm install numlib</code></pre>
-      <p>Or include via CDN:</p>
-      <pre><code>&lt;script src="https://cdn.example.com/numlib.js"&gt;&lt;/script&gt;</code></pre>
-    </section>
+  /* ── RENDER: EVENTS ── */
+  function renderEvents() {
+    document.getElementById('events-grid').innerHTML = EVENTS.map(ev => `
+      <div class="events-card">
+        <div class="events-datebox">
+          <span class="month">${ev.month}</span>
+          <span class="day">${ev.day}</span>
+        </div>
+        <div class="events-info">
+          <div class="events-title"><a href="${ev.url}" target="_blank">${ev.title}</a></div>
+          <div class="events-meta">${ev.loc}</div>
+          <span class="events-pill ${ev.upcoming ? 'pill-upcoming' : 'pill-past'}">${ev.upcoming ? 'Upcoming' : 'Past'}
+        </div>
+      </div>
+    `).join('');
+  }
 
-    <section id="docs" class="section">
-      <h2>Example Usage</h2>
-      <pre><code>import { matrixMultiply } from 'numlib';
-
-const A = [[1,2],[3,4]];
-const B = [[5,6],[7,8]];
-
-console.log(matrixMultiply(A, B));</code></pre>
-    </section>
-
-    <section id="github" class="section">
-      <h2>GitHub</h2>
-      <p>View the source code and contribute:</p>
-      <a class="btn" href="https://github.com/yourusername/numlib">Visit Repository</a>
-    </section>
-  </div>
-
-  <footer>
-    <p>© 2026 NumLib. Built for GitHub Pages.</p>
-  </footer>
+  /* ── INIT ── */
+  renderNews();
+  renderEvents();
+</script>
 </body>
 </html>
