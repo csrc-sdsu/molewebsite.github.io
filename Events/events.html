@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <img src="Images/TopBannerHome.png" 
+  <img src="https://mole-ose.org/Images/TopBannerHome.png" 
         alt="Mimetic Operators Library Enhanced (MOLE) - Open-source Software Ecosystem"
         width="90%"/>
   <!--<title>MOLE — Mimetic Operators Library Enhanced</title>-->
-  <link rel="icon" type="image/png" href="Images/mole-logo.png">
+  <link rel="icon" type="image/png" href="https://mole-ose.org/Images/mole-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" 
@@ -20,7 +20,6 @@
       --green-dark: #256371;
       --green-light: #75bdce;
       --green-mid: #458fa0;
-      --fnt-light: #09cdf9;
       --bg: #F7F6F2;
       --surface: #FFFFFF;
       --text: #1A1A18;
@@ -75,43 +74,7 @@
       letter-spacing: 0.01em; transition: background 0.15s;
     }
     .nav-cta:hover { background: var(--green-mid); }
-
-    /* ── HERO ── */
-    .hero {
-      padding: 1rem 2.5rem 5rem;
-      border-bottom: 1px solid var(--border);
-      position: relative; overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute; top: -80px; right: -100px;
-      /* width: 600px; height: 600px; border-radius: 50%; */
-      background: radial-gradient(circle, rgba(29,158,117,0.08) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-family: var(--mono); font-size: 12px; letter-spacing: 0.05em;
-      /* padding: 5px 12px; border-radius: 99px; */
-      background: var(--green-light); color: var(--green-mid);
-      border: 1px solid rgba(29,158,117,0.2);
-      margin-bottom: 1.5rem;
-    }
-    .hero-badge::before {
-      content: ''; width: 6px; height: 6px; border-radius: 50%;
-      background: var(--green); display: block;
-    }
-    .hero h1 {
-      font-family: var(--display); font-size: clamp(30px, 5vw, 58px);
-      font-weight: 700; line-height: 1.08; letter-spacing: -1.5px;
-      margin-bottom: 1.0rem;
-    }
-    .hero h1 em { font-style: normal; color: var(--green); }
-    .hero-desc {
-      font-size: 17px; color: var(--text-muted); 
-      line-height: 1.75; margin-bottom: 1.5rem; font-weight: 300;
-    }
-    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 3.5rem; }
+    
     .btn-primary {
       padding: 12px 26px; background: var(--green); color: #fff;
       border: none; border-radius: 10px; font-size: 15px;
@@ -126,20 +89,7 @@
       text-decoration: none; display: inline-block; transition: border-color 0.15s, background 0.15s;
     }
     .btn-outline:hover { background: var(--surface); border-color: var(--text-muted); }
-    .hero-stats {
-      display: flex; gap: 0; flex-wrap: wrap;
-      border: 1px solid var(--border); border-radius: 14px;
-      background: var(--surface); overflow: hidden;
-      max-width: 680px;
-    }
-    .stat {
-      flex: 1; padding: 1.25rem 1.5rem;
-      border-right: 1px solid var(--border);
-    }
-    .stat:last-child { border-right: none; }
-    .stat-num { font-family: var(--display); font-size: 24px; font-weight: 700; }
-    .stat-label { font-size: 12px; color: var(--text-muted); font-family: var(--mono); margin-top: 2px; }
-
+  
     /* ── SECTIONS ── */
     section { padding: 2.5rem 2.5rem; }
     /* border-bottom: 1px solid var(--border); } */
@@ -152,27 +102,13 @@
       letter-spacing: -0.3px;
     }
     .see-all {
-      font-family: var(--mono); font-size: 16px; color: var(--green);
+      font-family: var(--mono); font-size: 12px; color: var(--green);
       text-decoration: none; letter-spacing: 0.04em;
     }
     .see-all:hover { text-decoration: underline; }
 
-    /* ── NEWS GRID ── */
-    .news-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
-    @media (max-width: 640px) { .news-grid { grid-template-columns: 1fr; } }
-    .news-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 14px; padding: 1.25rem 1.5rem;
-      display: flex; gap: 16px; align-items: flex-start;
-      transition: border-color 0.15s;
-    }
-    .news-card:hover { border-color: var(--border-strong); }
-    .news-info { flex: 1; }
-    .news-title { font-family: var(--display); font-size: 20px; font-weight: 600; margin-bottom: 4px; }
-    .news-meta { font-size: 18px; color: var(--text-muted); font-family: var(--mono); }
- 
-    /* ── EVENTS GRID ── */
-    .events-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    /* ── UPCOMING EVENTS GRID ── */
+    .events-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
     @media (max-width: 640px) { .events-grid { grid-template-columns: 1fr; } }
     .events-card {
       background: var(--surface); border: 1px solid var(--border);
@@ -205,7 +141,51 @@
     .pill-upcoming { background: var(--green-light); color: var(--bg); }
     .pill-past { background: var(--bg); color: var(--green-dark); border: 1px solid var(--border); }
     
+
+     /* ── PAST EVENTS GRID ── */
+    .pevents-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+    @media (max-width: 640px) { .pevents-grid { grid-template-columns: 1fr; } }
+    .pevents-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.25rem 1.5rem;
+      display: flex; gap: 16px; align-items: flex-start;
+      transition: border-color 0.15s;
+    }
+    .pevents-card:hover { border-color: var(--border-strong); }
+    .pevents-datebox {
+      min-width: 52px; height: 56px; border-radius: 10px;
+      background: var(--green-light); border: 1px solid rgba(29,158,117,0.2);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .pevents-datebox .month {
+      font-family: var(--mono); font-size: 16px; font-weight: 500;
+      color: var(--bg); letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .pevents-datebox .day {
+      font-family: var(--display); font-size: 18px; font-weight: 700;
+      color: var(--green-dark); line-height: 1;
+    }
+    .pevents-info { flex: 1; }
+    .pevents-title { font-family: var(--display); font-size: 20px; font-weight: 600; margin-bottom: 4px; }
+    .pevents-meta { font-size: 18px; color: var(--text-muted); font-family: var(--mono); }
+    .pevents-pill {
+      display: inline-block; margin-top: 8px;
+      font-family: var(--mono); font-size: 18px; padding: 3px 10px; border-radius: 99px;
+    }
     
+    .filter-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .filter-btn {
+      font-family: var(--mono); font-size: 12px; letter-spacing: 0.03em;
+      padding: 5px 14px; border-radius: 99px; cursor: pointer;
+      border: 1px solid var(--border-strong); background: transparent;
+      color: var(--text-muted); transition: all 0.15s;
+    }
+    .filter-btn:hover { border-color: var(--green); color: var(--green); }
+    .filter-btn.active {
+      background: var(--green); color: #fff; border-color: var(--green);
+    }
+
     /* ── FOOTER ── */
     footer {
       padding: 1.75rem 2.5rem;
@@ -224,7 +204,7 @@
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .hero { padding: 4rem 1.5rem 3rem; }
-      section { padding: 5.5rem 1.5rem; }
+      section { padding: 2.5rem 1.5rem; }
       nav { padding: 0 1.5rem; }
       footer { padding: 1.5rem; }
     }
@@ -235,64 +215,39 @@
 <!-- NAV -->
 <nav>
   <a href="https://mole-docs.readthedocs.io/">
-    <img src="Images/mole-logo.png" alt="MOLE Library Information" height="50"/>
+    <img src="https://mole-ose.org/Images/mole-logo.png" alt="MOLE Library Information" height="50"/>
   </a>
   <ul class="nav-links">
-    <li><a href="https://mole-ose.org">Home</a></li>
-    <li><a href="https://mole-ose.org/gallery.html">Gallery</a></li>
-    <li><a href="https://mole-docs.readthedocs.io/en/main/index.html">Documentation</a></li>
-    <li><a href="Events/events.html"">Events</a></li>
-    <li><a href="https://mole-ose.org/collaborators.html">Collaborators</a></li>
-    <li><a href="https://mole-ose.org/sponsors.html">Sponsors</a></li>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../Gallery/gallery.html">Gallery</a></li>
+    <li><a href="https://mole-docs.readthedocs.io/en/main/">Documentation</a></li>
+    <li><a href="https://mole-docs.readthedocs.io/en/main/">Documentation</a></li>
+    <li><a href="#events">Events</a></li>
+    <li><a href="../Collaborators/collaborators.html">Collaborators</a></li>
+    <li><a href="../Sponsors/sponsors.html">Sponsors</a></li>
   </ul>
   <!-- <a class="nav-cta" href="https://github.com/csrc-sdsu/mole" target="_blank">GitHub ↗</a> -->
 </nav>
 
-<!-- Home -->
-<section id="Home">
-  <div class="hero">
-    <h1>MOLE Open-source Software Ecosystem (OSE)</h1>
-    <p class="hero-desc">
-      <span style="color: var(--text);font-weight: 700;">The MOLE Library </span> implements high-order mimetic difference operators to numerically 
-      solve partial differential equations. It provides discrete analogs of 
-      the most common vector calculus operators: Gradient, Divergence, Laplacian, 
-      and Curl. These operators act on staggered grids (uniform, non-uniform, 
-      and curvilinear) and preserve locally and globally quantities of interests 
-      for systems of conservation laws.<br>
-      <span style="color: var(--text);font-weight: 700;">The MOLE OSE organization</span> was established to support 
-      the MOLE library’s ecosystem as a sustainable, robust, secure, and more 
-      readily available library of high-order mimetic differential operators. 
-      The MOLE OSE serves academic and industrial communities that require 
-      high-performance solvers for PDEs.</p>
-    <!-- NEWS AND UPCOMING EVENTS -->
-     <section id="events">
-          <p style="font-family: var(--sans); color:#265059; font-size: 32px; font-weight: 600; ">
-            MOLE News and Upcoming Events 
-          </p>
-         <div class="news-grid" id="news-grid"></div><br>
-         <div class="events-grid" id="events-grid"></div><br>
-          <a class="see-all" href="Events/events.html">Full list of Events →</a>
-     </section>
-    <div class="hero-actions">
-      <a class="btn-primary" href="https://github.com/csrc-sdsu/mole" target="_blank">View on GitHub</a>
-      <a class="btn-outline" href="https://mole-docs.readthedocs.io/" target="_blank">Read the docs</a>
-      <a class="btn-outline" href="https://mole-docs.readthedocs.io/en/main/intros/ose_organization_wrapper.html"
-          target="_blank">MOLE OSE Organization</a>
-      <a class="btn-outline" href="https://mole-docs.readthedocs.io/en/main/intros/contributing_wrapper.html"
-          target="_blank">Contributing to MOLE</a>
-      <a class="btn-outline" href="https://mole-docs.readthedocs.io/en/main/intros/code_of_conduct_wrapper.html"
-          target="_blank">Code of Conduct</a>
-      <a class="btn-outline" href="https://mole-docs.readthedocs.io/en/main/intros/publications_wrapper.html"
-          target="_blank">Selected Publications</a>
-    </div>
-    <!-- the lines below are for future inclusion of KPIs and metrics-->
-    <!-- <div class="hero-stats">
-      <div class="stat">
-      <div class="stat-num">12+</div>
-      <div class="stat-label">applications</div>
-    </div -->
+<!-- UPCOMING EVENTS -->
+<section id="events">
+  <div class="section-header">
+    <p style="font-family: var(--sans); color:#265059; font-size: 32px; font-weight: 600; margin-bottom: 1px; ">
+      Upcoming MOLE Events </p>
   </div>
-</section> 
+  <div class="events-grid" id="events-grid"></div>
+  <div class="filter-row" id="filter-row"></div>
+</section>
+
+<!-- PAST EVENTS -->
+<section id="past-events">
+  <div class="section-header">
+    <p style="font-family: var(--sans); color:#265059; font-size: 32px; font-weight: 600; margin-bottom: 1px; ">
+      Past MOLE Events </p>
+  </div>
+  <div class="pevents-grid" id="pevents-grid"></div>
+  <div class="filter-row" id="filter-row"></div>
+</section>
 
 <!-- FOOTER -->
 <footer>
@@ -306,35 +261,31 @@
 
 <script>
   /* ── DATA ── Edit this section to update content ── */
+
   const EVENTS = [
     { month: "Apr", day: "30", title: "MOLE Users's Group Meeting 2026", 
-    loc: "San Diego State University, CA", upcoming: true, 
-    url: "Events/MUG20260430.html" },
+    loc: "San Diego State University, CA", 
+    url: "Upcoming/MUG20260430.html" },
     { month: "May", day: "12",  title: "MOLE Library Tutorial", 
-    loc: "San Diego State University, CA", upcoming: true, 
-    url: "Events/MLTSP20260512.html" },
+    loc: "San Diego State University, CA",
+    url: "Upcoming/MLTSP20260512.html" },
   ];
-  /* ── DATA ── Edit this section to update content ── */
-  const NEWS = [
-    { title: "Current MOLE Library Release: v1.10", newstxt: false},
-    { title: "Next MOLE Library Release: v1.2", newstxt:true,
-    txt: "The next MOLE release will include several new MATLAB/Octave and C++ features and improvements. The release date is planned for May 4, 2026" },
-    { title: "Subscribe to the MOLE Users Mailing List", newstxt:true,
-    txt: "Stay updated with the latest news and announcements by subscribing to the MOLE Users Mailing List, send email to <a href='mailto:join@engr.sdsu.edu'>mole-join@engr.sdsu.edu</a>." },
-  ];
-  /* ── RENDER: NEWS ── */
-  function renderNews() {
-    document.getElementById('news-grid').innerHTML = NEWS.map(nw => `
-      <div class="news-card">
-        <div class="news-info">
-          <div class="news-title">${nw.title}</div>
-          <span class="news-meta">${nw.newstxt ? nw.txt : ''}</span>
-        </div>
-      </div>
-    `).join('');
-  }
 
-  /* ── RENDER: EVENTS ── */
+    const PEVENTS = [
+    { month: "Nov", day: "16", title: "MOLE OSE at SC'25", 
+    loc: "Nov 16-21, 2025 - St. Louis, MO", 
+    url: "Past/SC2520251116.html" },
+  ];
+
+  document.getElementById('filter-row').addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderEvents(btn.dataset.tag);
+  });
+
+/* ── RENDER: EVENTS ── */
   function renderEvents() {
     document.getElementById('events-grid').innerHTML = EVENTS.map(ev => `
       <div class="events-card">
@@ -345,15 +296,29 @@
         <div class="events-info">
           <div class="events-title"><a href="${ev.url}" target="_blank">${ev.title}</a></div>
           <div class="events-meta">${ev.loc}</div>
-          <span class="events-pill ${ev.upcoming ? 'pill-upcoming' : 'pill-past'}">${ev.upcoming ? 'Upcoming' : 'Past'}
         </div>
       </div>
     `).join('');
   }
 
+/* ── RENDER: PAST EVENTS ── */
+  function renderPastEvents() {
+    document.getElementById('pevents-grid').innerHTML = PEVENTS.filter(ev => !ev.upcoming).map(ev => `
+      <div class="pevents-card">
+        <div class="pevents-datebox">
+          <span class="month">${ev.month}</span>
+          <span class="day">${ev.day}</span>
+        </div>
+        <div class="pevents-info">
+          <div class="pevents-title"><a href="${ev.url}" target="_blank">${ev.title}</a></div>
+          <div class="pevents-meta">${ev.loc}</div>
+        </div>
+      </div>
+    `).join('');
+  }
   /* ── INIT ── */
-  renderNews();
   renderEvents();
+  renderPastEvents();
 </script>
 </body>
 </html>

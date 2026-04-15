@@ -3,11 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <img src="../Images/TopBannerHome.png" 
+  <img src="../../Images/TopBannerHome.png" 
         alt="Mimetic Operators Library Enhanced (MOLE) - Open-source Software Ecosystem"
         width="90%"/>
-  <!--<title>MOLE — Mimetic Operators Library Enhanced</title>-->
-  <!--<link rel="icon" type="image/png" href="../Images/mole-logo.png">-->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" 
@@ -44,7 +42,7 @@
     }
     /* ── HERO ── */
     .hero {
-      padding: 1rem 2.5rem 5rem;
+      padding: 0.5rem 0.5rem 5rem;
       border-bottom: 1px solid var(--border);
       position: relative; overflow: hidden;
     }
@@ -170,14 +168,15 @@
 <!-- NAV -->
 <nav>
   <a href="https://mole-docs.readthedocs.io/">
-    <img src="../Images/mole-logo.png" alt="MOLE Library Information" height="50"/>
+    <img src="../../Images/mole-logo.png" alt="MOLE Library Information" height="50"/>
   </a>
   <ul class="nav-links">
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="../Gallery/gallery.html">Gallery</a></li>
-    <li><a href="../Events/events.html">News</a></li>
-    <li><a href="../Collaborators/collaborators.html">Collaborators</a></li>
-    <li><a href="../Sponsors/sponsors.html">Sponsors</a></li>
+   <li><a href="../../index.html">Home</a></li>
+    <li><a href="../../Gallery/gallery.html">Gallery</a></li>
+    <li><a href="../../Events/events.html">Events</a></li>
+    <li><a href="https://mole-docs.readthedocs.io/en/main/">Documentation</a></li>
+    <li><a href="../../Collaborators/collaborators.html">Collaborators</a></li>
+    <li><a href="../../Sponsors/sponsors.html">Sponsors</a></li>
   </ul>
   <!-- <a class="nav-cta" href="https://github.com/csrc-sdsu/mole" target="_blank">GitHub ↗</a> -->
 </nav>
@@ -185,39 +184,36 @@
 <!-- Home -->
 <section id="Home">
   <div class="hero">
-    <h1>A Tutorial on The Mimetic Operators Library Enhanced (MOLE)</h1>
-    <h2>May 12, 2026, from 10 AM to 12:00 PM. U.S. Pacific Daylight Saving Time.</h2>
-    <h2>Bioscience Center Auditorium, San Diego State University, California</h2>
-  </div> 
-  <div class="hero-actions">
-    <a class="btn-outline" href=https://forms.gle/7KZ8t3zCUxu7f6vB7" target="_blank">
-      <img src="../Images/MLTQRC20260512.png" alt="MOLE Tutorial Sprint 2026 Registration" 
-        height="100%" style="vertical-align: middle;"/>
+   <h1><em>MOLE Presentations, Clinics and Tutorials at SC'25</em></h1>
+    <a href="https://sc25.supercomputing.org/" target="_blank">
+     <h2>The International Conference for High Performance Computing, Networking,</h2>
+      <h2>Storage, and Analysis - St. louis, MO • NOV 16–21, 2025</h2>
     </a>
   </div>
   <div class="hero-desc">
-   The Mimetics Operator Library Enhanced (MOLE) is a high-quality (C++ & MATLAB/Octave) 
-   library that implements high-order mimetic difference operators to numerically solve 
-   partial differential equations. It provides discrete analogs of the most common vector 
-   calculus operators: Gradient, Divergence, Laplacian, and Curl. These operators (highly 
-   sparse matrices) act on staggered grids (uniform, non-uniform, curvilinear) and preserve 
-   locally and globally quantities of interest for systems of conservation laws.<br> 
-   This tutorial will cover an introduction to MOLE mimetic difference operators; gradient, 
-   divergence, laplacian and curl for C++ and MATLAB/Octave users.  Attendants will learn 
-   how to use the MOLE library  through examples, and also review the installation and 
-   guidelines to contribute to the MOLE library. Please, read the Getting Started Section 
-   in <a href="https://mole-docs.readthedocs.io/" target="_blank">mole-docs.readthedocs.io/</a> and install or clone the MOLE library. Installation support 
-   will be provided 90-minutes prior to the beginning of the tutorial.<br> 
-   The tutorial is free and will be held in person at Bioscience Center Auditorium, at SDSU, 
-   on May 12, 2026 from 10 AM to 12:00 PM U.S. PT, and also online via Zoom. To register for 
-   this tutorial, in person or online, please fill out <a href="https://forms.gle/7KZ8t3zCUxu7f6vB7">
-    the MOLE Tutorial Registration Form.i</a><br><br>
     <ul>
-      <li>For questions about this MOLE tutorial, please contact: jcastillo@sdsu.edu</i>
-      <li>A map of <a href="https://sacd.sdsu.edu/_resources/files/map-full-clr-print.pdf">SDSU Campus</a></li>
-      <li>A printable <a href="../PDFs/MLT20260512-flyer.pdf">flyer of this MOLE Tutorial</a></li>
+      <li>Members of the MOLE OSE Leadership team attended SC’25 and were available
+          in the exhibition hall to present the MOLE library in the CSRC booth.
+          Conference attendees had the opportunity to interact with the MOLE team, ask 
+          questions about the library, watch live demos of scientific applications that use 
+          MOLE, learn about mimetic discretizations, attend a short introduction to the MOLE 
+          API.</li>
+   <li> Dr. Jared Brzenski, a member of the MOLE Leadership team, presented a demo 
+    which showcased a classic lock exchange (also called lock release) problem, 
+   where two fluids with different densities are initially separated by a wall that 
+   is later released. We performed computational benchmarking of the General 
+   Curvilinear Coastal Ocean model (GCCOM), which employs MOLE mimetic operators for 
+   solving geophysical fluid dynamics problems. This experiment was run on the Argonne 
+   National Laboratory’s Aurora exascale computer, which is equipped with Intel processors
+   optimized for high-throughput scientific computing.</li> 
+   <li> <b><i>MOLE Clinics:</i></b> members of the MOLE development team were available to 
+    answer questions pertaining to the MOLE library, from the software installation, and becoming part of the MOLE 
+    community, to using MOLE, and learning about mimetic discretizations.</li>
+    <li>MOLE was also part of the Intel Innovation Pass at Supercomputing 2025 </li>
     </ul>
   </div>
+     <image src="../../PDFs/SC25Flyer.png" alt="MOLE SC'25 Schedule" style="width:100%;"/>
+    </div>
 </section>
 
 
